@@ -39,11 +39,15 @@ class Mushroom:
 
 
 mushroom = Mushroom()
-ME = Character()
-ME.size = 2
 
-objectDictionary = {'mushroom': mushroom, 'me': ME}
-characterList = {'me': ME}
+
+player = Character()
+player.size = 2
+caterpillar = Character()
+caterpillar.size = 1
+
+objectDictionary = {'mushroom': mushroom, 'me': player}
+characterList = {'me': player, 'caterpillar': caterpillar}
 verbList = {'look','love','eat'} # {TO-DO: For my reference. Make attempting one-word commands print messages specific to the verb, like with 'exit'.}
 
 def executePlayerCommand(verb,character,thing):
@@ -62,7 +66,7 @@ def executePlayerCommand(verb,character,thing):
 
 
 def playerAction():
-    print 'You are %s sizes tall.' % ME.size #Debugging line.
+    print 'You are %s sizes tall.' % player.size #Debugging line.
     print 'What would you like to do?'
     playerCommand = raw_input()
     playerCommandWords = playerCommand.split(' ')
